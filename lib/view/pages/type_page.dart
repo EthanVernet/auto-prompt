@@ -1,0 +1,5 @@
+enum TypePage {
+  PAGE_CONFIGURE,
+  PAGE_COPY,
+  PAGE_SELECT,
+}
