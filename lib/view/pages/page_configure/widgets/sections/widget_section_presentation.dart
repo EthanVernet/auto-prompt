@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front/app/app_color.dart'; // Assurez-vous que ce chemin est correct
+import 'package:front/app/app_color.dart'; // Assurez-vous que le chemin est correct
 import 'package:front/logic/model/section/section_model.dart';
-import 'package:front/view/layout/column/layout_dual_column.dart';
-import 'package:front/view/layout/column/layout_dual_row.dart';
 
 class WidgetSectionPresentation extends StatefulWidget {
   final SectionModel section;
@@ -17,92 +15,112 @@ class WidgetSectionPresentation extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _WidgetSectionPresentationState createState() => _WidgetSectionPresentationState();
+  State<WidgetSectionPresentation> createState() => _WidgetSectionPresentationState();
 }
 
 class _WidgetSectionPresentationState extends State<WidgetSectionPresentation> {
-  late TextEditingController titleController;
-  late TextEditingController contentController;
+  late final titleController = TextEditingController();
+  late final contentController = TextEditingController();
+  final FocusNode titleFocusNode = FocusNode();
+  final FocusNode contentFocusNode = FocusNode();
+  bool _isFocused = false;
 
   @override
   void initState() {
     super.initState();
-    titleController = TextEditingController();
-    contentController = TextEditingController();
+    titleFocusNode.addListener(_onFocusChange);
+    contentFocusNode.addListener(_onFocusChange);
+  }
+
+  void _onFocusChange() {
+    final hasFocus = titleFocusNode.hasFocus || contentFocusNode.hasFocus;
+    if (_isFocused != hasFocus) {
+      setState(() {
+        _isFocused = hasFocus;
+      });
+    }
   }
 
   @override
   void dispose() {
     titleController.dispose();
     contentController.dispose();
+    titleFocusNode.dispose();
+    contentFocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      elevation: 4,
-      shadowColor: Colors.black.withOpacity(0.4),
-      margin: const EdgeInsets.all(10),
-      child: Container(
-        height: 200,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: LayoutDualColumn(
-          leftWidget: LayoutDualRow(
-            topWidget: TextFormField(
-              controller: titleController,
-              textAlign: TextAlign.left,
-              style: const TextStyle(fontSize: 20, color: Colors.black),
-              decoration: const InputDecoration(
-                hintText: 'Titre',
-                hintStyle: TextStyle(color: AppColors.primaryColor2),
-                border: InputBorder.none,
-              ),
-              onChanged: (value) => widget.onUpdate(value, contentController.text),
-            ),
-            bottomWidget: TextFormField(
-              controller: contentController,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(color: Colors.black),
-              decoration: const InputDecoration(
-                hintText: 'Contenu',
-                hintStyle: TextStyle(color: AppColors.primaryColor2),
-                border: InputBorder.none,
-              ),
-              onChanged: (value) => widget.onUpdate(titleController.text, value),
-              maxLines: null,
-              keyboardType: TextInputType.multiline,
-            ),
-            isTopFlex: false,
-            topFlex: 32,
-          ),
-          rightWidget: Align(
-            alignment: Alignment.bottomCenter, // Centrage vertical du Container
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 8, right: 8), // Ajout d'un padding de 16px
-              child: Container(
-                height: 50.0,
-                width: 50.0,
-                decoration: BoxDecoration(
-                  color: AppColors.secondaryColor1, // Utilisation de la couleur demandée
-                  borderRadius: BorderRadius.circular(25.0),
+    return Container(
+      color: _isFocused ? AppColors.greyBackground : AppColors.lightBackground,
+      height: 82,
+      child: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(height: 8),
+                      Container(
+                        height: 24,
+                        alignment: Alignment.centerLeft,
+                        child: TextFormField(
+                          controller: titleController,
+                          focusNode: titleFocusNode,
+                          onChanged: (value) => widget.onUpdate(value, contentController.text),
+                          decoration: const InputDecoration(
+                            hintText: 'Titre',
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(
+                              color: AppColors.actionColor,
+                            ),
+                          ),
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextFormField(
+                          controller: contentController,
+                          focusNode: contentFocusNode,
+                          onChanged: (value) => widget.onUpdate(titleController.text, value),
+                          maxLines: null,
+                          keyboardType: TextInputType.multiline,
+                          decoration: const InputDecoration(
+                            hintText: 'Contenu',
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(
+                              color: AppColors.actionColor,
+                            ),
+                          ),
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: IconButton(
-                  icon: const Icon(Icons.delete, color: Colors.white),
-                  onPressed: widget.onDelete,
+                SizedBox(
+                  width: 52,
+                  child: IconButton(
+                    icon: const Icon(Icons.delete, color: AppColors.actionColor),
+                    onPressed: widget.onDelete,
+                  ),
                 ),
-              ),
+                const SizedBox(width: 16),
+              ],
             ),
           ),
-          leftSize: 7,
-          rightSize: 1,
-        ),
+          Container(
+            height: 1,
+            color: AppColors.lightGreyBorder,
+          ),
+        ],
       ),
     );
   }

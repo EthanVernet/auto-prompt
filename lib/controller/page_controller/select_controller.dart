@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:front/logic/business/file_loader_business.dart';
-import 'package:front/logic/business/folder_loader_business.dart'; // Import manquant pour FolderLoaderBusiness
+import 'package:front/logic/business/folder_loader_business.dart';
 import 'package:front/logic/model/file/file_content_manager.dart';
 import 'package:front/logic/model/file/file_content_model.dart';
 import 'package:front/logic/model/folder/folder_model.dart';
@@ -12,6 +12,8 @@ class SelectController extends ChangeNotifier {
   FileContentManager fileContentManager;
   final FolderModel folderModel;
   final ProgrammingLanguageManager languageManager;
+
+  ValueNotifier<FolderModel?> selectedFolderNotifier = ValueNotifier(null);
 
   SelectController({required this.folderModel, required this.languageManager})
       : folderModelManager = FolderModelManager(FolderModel(selectedDirectoryPath: '')),
@@ -41,19 +43,15 @@ class SelectController extends ChangeNotifier {
     }
   }
 
+  void selectFolder(FolderModel folder) {
+    selectedFolderNotifier.value = folder;
+  }
+
   FolderModel getRootFolder() {
     return folderModelManager.RootFolder;
   }
 
-  void updateFolderModelManager(FolderModelManager newManager) {
-    folderModelManager = newManager;
-  }
-
-  void updateFileContentManager(FileContentManager newManager) {
-    fileContentManager = newManager;
-  }
-
-  List<FolderModel> getFolderTree(){
+  List<FolderModel> getFolderTree() {
     return folderModelManager.getFolderPathsInOrder();
   }
 

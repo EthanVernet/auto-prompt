@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/controller/main_controller.dart';
-import 'package:front/controller/navigation_controller.dart';
-import 'package:front/view/pages/type_page.dart';
 
-class NavigateButton extends StatefulWidget {
-  final TypePage type;
-  final MainController? controller;
+class WidgetCopyButton extends StatelessWidget {
+  final TextEditingController textController;
+  final bool _isLoading = false;
 
-  const NavigateButton({super.key, required this.type, this.controller});
+  const WidgetCopyButton({Key? key, required this.textController}) : super(key: key);
 
-  @override
-  State<NavigateButton> createState() => _NavigateButtonState();
-}
-
-class _NavigateButtonState extends State<NavigateButton> {
-  bool _isLoading = false;
+  void _copyToClipboard(BuildContext context) {
+    Clipboard.setData(ClipboardData(text: textController.text)).then((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Content copied to clipboard.')),
+      );
+    });
+  }
 
   static const TextStyle nextButtonTextStyle = TextStyle(fontSize: 12, fontWeight: FontWeight.bold);
   static final buttonStyle = TextButton.styleFrom(
@@ -36,9 +35,9 @@ class _NavigateButtonState extends State<NavigateButton> {
         borderRadius: BorderRadius.circular(5.0),
         color: AppColors.actionColor,
       ),
-      height: 24,
+      height: 24.0,
       child: TextButton(
-        onPressed: _isLoading ? null : () => _handlePress(),
+        onPressed: _isLoading ? null : () => _copyToClipboard(context),
         style: buttonStyle,
         child: _isLoading
             ? const SizedBox(
@@ -49,18 +48,8 @@ class _NavigateButtonState extends State<NavigateButton> {
             valueColor: AlwaysStoppedAnimation<Color>(AppColors.lightBackground),
           ),
         )
-            : const Text('Suivant', style: nextButtonTextStyle),
+            : const Text('Copy', style: nextButtonTextStyle),
       ),
     );
-  }
-
-  void _handlePress() {
-    setState(() => _isLoading = true);
-    Future.delayed(const Duration(seconds: 1), () {
-      if (mounted) {
-        NavigationController().navigateTo(context, widget.type, widget.controller);
-        setState(() => _isLoading = false);
-      }
-    });
   }
 }

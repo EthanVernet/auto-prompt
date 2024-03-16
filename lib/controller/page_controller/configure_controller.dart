@@ -22,7 +22,7 @@ class ConfigureController extends ChangeNotifier {
       String? path = await FilePicker.platform.getDirectoryPath();
       if (path != null) {
         folderModel.selectedDirectoryPath = path;
-        notifyListeners(); // Notifie les écouteurs que quelque chose a changé
+        notifyListeners();
         debugPrint('pickDirectory() -- path : $path');
       } else {
         debugPrint('pickDirectory() -- No path selected');

@@ -6,29 +6,46 @@ import 'package:front/view/pages/page_select/widgets/selectable_file_button.dart
 
 class SelectableFileList extends StatefulWidget {
   final MainController controller;
-  final FolderModel? folder;
 
-  const SelectableFileList({Key? key, required this.controller, this.folder}) : super(key: key);
+  const SelectableFileList({Key? key, required this.controller}) : super(key: key);
 
   @override
   _SelectableFileListState createState() => _SelectableFileListState();
 }
 
 class _SelectableFileListState extends State<SelectableFileList> {
-  List<FileContentModel> filterFiles() {
-    if (widget.folder == null) {
-      return [];
-    }
-    return widget.controller.getFileForCurrentTree(widget.folder!);
+  @override
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.selectController.selectedFolderNotifier.addListener(_updateFilesList);
+    _updateFilesList(widget.controller.getRootFolder());
+  }
+
+  void _updateFilesList([FolderModel? newFolder]) {
+    setState(() {
+      var selectedFolder = newFolder ?? widget.controller.selectController.selectedFolderNotifier.value;
+      if (selectedFolder != null) {
+        widget.controller.selectController.selectFolder(selectedFolder);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    widget.controller.selectController.selectedFolderNotifier.removeListener(_updateFilesList);
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    List<FileContentModel> files = filterFiles();
+    FolderModel? selectedFolder = widget.controller.selectController.selectedFolderNotifier.value;
+    List<FileContentModel> files = selectedFolder != null
+        ? widget.controller.selectController.getFilesForFolderAndSubfolders(selectedFolder)
+        : [];
 
-    return Padding(
-        padding: const EdgeInsets.only(top: 8),
-        child: ListView.builder(
+    return Container(
+        child : ListView.builder(
           itemCount: files.length,
           itemBuilder: (context, index) {
             return SelectableFileItem(

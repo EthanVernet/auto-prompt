@@ -17,17 +17,32 @@ class SelectableFileItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    // Utilisation de GestureDetector pour capturer les interactions de l'utilisateur
+    return GestureDetector(
       onTap: () {
         controller.toggleFileSelection(fileContentModel);
         onSelected();
       },
       child: Container(
-        color: fileContentModel.isSelected ? AppColors.primaryColor2 : Colors.transparent,
-        padding: const EdgeInsets.all(8.0),
-        child: ListTile(
-          title: Text(fileContentModel.fileName),
-          leading: Icon(fileContentModel.isSelected ? Icons.check_circle : Icons.circle_outlined), // Ajout d'une icône pour indiquer la sélection
+        width: double.infinity, // Prendre la largeur maximale
+        height: 52.0,
+        decoration: BoxDecoration(
+          color: fileContentModel.isSelected ? AppColors.greyBackground : AppColors.lightBackground,
+          // Ajouter une bordure en bas du container
+          border: const Border(
+            bottom: BorderSide(color: AppColors.lightGreyBorder, width: 1),
+          ),
+        ),
+        padding: const EdgeInsets.all(8.0), // Padding autour du texte
+        child: Align(
+          alignment: Alignment.centerLeft, // Aligner le texte à gauche
+          child: Text(
+            fileContentModel.fileName,
+            style: const TextStyle(
+              fontSize: 12, // Taille de texte similaire à celle utilisée dans l'exemple précédent
+              color: AppColors.darkBackground, // Couleur du texte
+            ),
+          ),
         ),
       ),
     );

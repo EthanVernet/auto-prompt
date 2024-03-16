@@ -7,57 +7,98 @@ class SelectableControlButtons extends StatelessWidget {
 
   const SelectableControlButtons({Key? key, required this.controller}) : super(key: key);
 
-  void _selectAllFiles() {
-    controller.selectAllFiles();
-  }
+  static const TextStyle buttonTextStyle = TextStyle(
+    fontSize: 12,
+    color: AppColors.lightBackground,
+  );
 
-  void _deselectAllFiles() {
-    controller.deselectAllFiles();
-  }
+  static final ButtonStyle buttonStyle = TextButton.styleFrom(
+    backgroundColor: AppColors.actionColor,
+    padding: const EdgeInsets.symmetric(horizontal: 10),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+  );
 
-  Widget _buildButton({required VoidCallback onPressed, required String label, required IconData icon}) {
-    return Container(
-      height: 50.0,
-      decoration: BoxDecoration(
-        color: AppColors.primaryColor2,
-        borderRadius: BorderRadius.circular(50.0),
-      ),
-      child: TextButton(
-        onPressed: onPressed,
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50.0),
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(label),
-            const SizedBox(width: 8),
-            Icon(icon),
-          ],
-        ),
-      ),
-    );
+  void _onButtonPressed(bool selectAll) {
+    if (selectAll) {
+      controller.selectAllFiles();
+    } else {
+      controller.deselectAllFiles();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start, // Modifié pour aligner à droite
       children: [
-        _buildButton(
-          onPressed: _selectAllFiles,
-          label: 'Tout sélectionner',
-          icon: Icons.check_circle,
+        const SizedBox(width: 16),
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: AppColors.actionColor,
+                width: 1
+            ),
+            borderRadius: BorderRadius.circular(5),
+            color: AppColors.actionColor,
+          ),
+          width: 230,
+          height: 24,
+          child: TextButton(
+            onPressed: () => _onButtonPressed(true),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              foregroundColor: AppColors.lightBackground,
+              textStyle: const TextStyle(fontSize: 12),
+            ),
+            child: RichText(
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Select ',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                  ),
+                  TextSpan(
+                    text: 'All',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
-        const SizedBox(width: 16), // Espacement fixe entre les boutons
-        _buildButton(
-          onPressed: _deselectAllFiles,
-          label: 'Tout désélectionner',
-          icon: Icons.remove_circle_outline,
+        const SizedBox(width: 33,),
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: AppColors.actionColor,
+                width: 1
+            ),
+            borderRadius: BorderRadius.circular(5),
+            color: AppColors.actionColor,
+          ),
+          width: 176,
+          height: 24,
+          child: TextButton(
+            onPressed: () =>_onButtonPressed(false),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              foregroundColor: AppColors.lightBackground,
+              textStyle: const TextStyle(fontSize: 12),
+            ),
+            child: RichText(
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Deselect ',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                  ),
+                  TextSpan(
+                    text: 'All',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ],
     );

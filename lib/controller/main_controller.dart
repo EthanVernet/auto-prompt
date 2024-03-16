@@ -73,8 +73,6 @@ class MainController extends ChangeNotifier {
   // Select
   Future<void> loadFilesWithExtension() async {
     await selectController.loadFilesWithExtension();
-    var filesString = selectController.fileContentManager.files.map((f) => f.fileName).join(', ');
-    var foldersString = selectController.folderModelManager.getFolderStructure();
   }
 
   FolderModel getRootFolder(){

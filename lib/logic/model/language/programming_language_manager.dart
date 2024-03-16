@@ -1,10 +1,13 @@
 import 'programming_language.dart';
 
 class ProgrammingLanguageManager {
-  final List<ProgrammingLanguage> _languages = [];
-  ProgrammingLanguage _selected = ProgrammingLanguage('Tous', ['.*']);
+  late  List<ProgrammingLanguage> _languages = [];
+  late ProgrammingLanguage _selected;
 
-  ProgrammingLanguageManager();
+  ProgrammingLanguageManager(List<ProgrammingLanguage> languages) {
+    _languages = languages;
+    _selected = languages.first;
+  }
 
   // Getter et setter pour selectedLanguage
   ProgrammingLanguage get selectedLanguage => _selected;

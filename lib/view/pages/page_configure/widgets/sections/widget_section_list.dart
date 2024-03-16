@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:front/app/app_color.dart';
 import 'package:front/controller/main_controller.dart';
 import 'package:front/logic/model/section/section_model.dart';
 import 'package:front/view/pages/page_configure/widgets/sections/widget_section_presentation.dart';
@@ -41,10 +43,52 @@ class _WidgetSectionsListState extends State<WidgetSectionsList> {
             },
           ),
         ),
-        IconButton(
-          icon: const Icon(Icons.add),
-          onPressed: _addSection,
+        Container(
+          height: 1,
+          color: AppColors.lightGreyBorder,
         ),
+        const SizedBox(height: 16,),
+        Row(
+          children: [
+            const Expanded(child: SizedBox.shrink()),
+            Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: AppColors.actionColor,
+                      width: 1
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                  color: AppColors.actionColor,
+                ),
+                width: 176,
+                height: 24,
+                child: TextButton(
+                  onPressed: _addSection,
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    foregroundColor: AppColors.lightBackground,
+                    textStyle: const TextStyle(fontSize: 12),
+                  ),
+                  child: RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Add ',
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                        ),
+                        TextSpan(
+                          text: 'Prompt Section',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+            ),
+            const SizedBox(width: 16,)
+          ],
+        ),
+        const SizedBox(height: 16,)
       ],
     );
   }

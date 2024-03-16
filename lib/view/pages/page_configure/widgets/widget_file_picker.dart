@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
 import 'package:front/controller/main_controller.dart';
-import 'package:front/view/layout/column/layout_dual_column.dart';
 
 class WidgetFilePicker extends StatefulWidget {
   final MainController controller;
@@ -24,45 +24,60 @@ class _WidgetFilePickerState extends State<WidgetFilePicker> {
     }
   }
 
-  Widget _buildRightWidget() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 32.0, bottom: 14),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            selectedDirectoryPath ?? 'No directory selected',
-            style: const TextStyle(fontSize: 18.0),
-            textAlign: TextAlign.left,
-          ),
-        ],
-      ),
-    );
-  }
-
-
   @override
   Widget build(BuildContext context) {
-    return LayoutDualColumn(
-      leftWidget: Container(
-        height: 50.0,
-        width: 50.0,
-        decoration: BoxDecoration(
-          color: AppColors.primaryColor2,
-          borderRadius: BorderRadius.circular(25.0),
+    return Row(
+      children: [
+        Container(
+          width: 16,
         ),
-        child: IconButton(
-          icon: const Icon(Icons.folder_open, color: Colors.white),
-          onPressed: _pickDirectory,
+        Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: AppColors.actionColor,
+                width: 1
+              ),
+              borderRadius: BorderRadius.circular(5),
+              color: AppColors.actionColor,
+            ),
+            width: 176,
+            height: 24,
+            child: TextButton(
+              onPressed: _pickDirectory,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                foregroundColor: AppColors.lightBackground,
+                textStyle: const TextStyle(fontSize: 12),
+              ),
+              child: RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Select ',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                    ),
+                    TextSpan(
+                      text: 'Folder Project',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+            )
         ),
-      ),
-      isLeftFlex: false,
-      leftSize: 50,
-
-      rightWidget: _buildRightWidget(),
-      isRightFlex: true,
-      rightSize: 7,
+        Container(
+          width: 16,
+        ),
+        Expanded(
+            child: Text(
+              selectedDirectoryPath ?? 'No directory selected',
+              style: const TextStyle(
+                color: AppColors.darkBackground,
+                fontSize: 12,
+              ),
+            )
+        ),
+      ],
     );
   }
 }
