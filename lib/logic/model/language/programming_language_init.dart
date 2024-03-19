@@ -7,6 +7,7 @@ class ProgrammingLanguageInit {
     try {
       List<ProgrammingLanguage> languages = [
         ProgrammingLanguage("Python", [".py"]),
+        ProgrammingLanguage("Python Docker", [".py", "Dockerfile", ".sh"]),
         ProgrammingLanguage("Flutter", [".dart","pubspeck.yaml"]),
         ProgrammingLanguage("Obsidian", [".md"]),
       ];
