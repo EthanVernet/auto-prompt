@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\ethan\Documents\_perso\GitHub\Auto prompt\windows\flutter\ephemeral\.plugin_symlinks\flutter_localization\windows\flutter_localization_plugin_c_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ethan\Documents\_perso\GitHub\Auto prompt\windows\flutter\ephemeral\.plugin_symlinks\flutter_localization\windows\flutter_localization_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\ethan\Documents\_perso\GitHub\Auto prompt\windows\flutter\ephemeral\.plugin_symlinks\flutter_localization\windows\include\flutter_localization\flutter_localization_plugin_c_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\ethan\Documents\_perso\GitHub\Auto prompt\windows\flutter\ephemeral\.plugin_symlinks\flutter_localization\windows\flutter_localization_plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ethan\Documents\_perso\GitHub\Auto prompt\windows\flutter\ephemeral\.plugin_symlinks\flutter_localization\windows\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5C416532-00C4-3357-8690-C36B7F8F464C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E29BD7FA-5755-3639-AB11-C86D5D126AA5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

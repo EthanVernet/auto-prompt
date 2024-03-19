@@ -1,0 +1,17 @@
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/icudtl.dat
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/flutter_windows.dll
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/flutter_localization_plugin.dll
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/record_windows_plugin.dll
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/url_launcher_windows_plugin.dll
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin.json
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/assets/icons/rocket.png
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/packages/record_web/assets/js/record.worklet.js
+C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

@@ -1,0 +1,10 @@
+^C:\USERS\ETHAN\DOCUMENTS\_PERSO\GITHUB\AUTO PROMPT\BUILD\WINDOWS\X64\CMAKEFILES\2A33C08A9801EFF70C0127912284060E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/ethan/Documents/_perso/GitHub/Auto prompt/windows" "-BC:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/ethan/Documents/_perso/GitHub/Auto prompt/build/windows/x64/auto_prompt.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
