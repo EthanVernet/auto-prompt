@@ -10,6 +10,7 @@ class ProgrammingLanguageInit {
         ProgrammingLanguage("Python Docker", [".py", "Dockerfile", ".sh"]),
         ProgrammingLanguage("Flutter", [".dart","pubspeck.yaml"]),
         ProgrammingLanguage("Obsidian", [".md"]),
+        ProgrammingLanguage("PDF", [".pdf"]),
       ];
       return ProgrammingLanguageManager(languages);
     } catch (e) {
