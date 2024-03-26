@@ -14,4 +14,24 @@ class MainController extends ChangeNotifier {
     daoFolder = DaoFolder();
     daoSection = DaoSection();
   }
+
+//----- PageConfigure
+// WidgetSectionList
+// WidgetSectionPresentation
+// WidgetExtensionSelector
+// WidgetFilePicker
+// PageConfigure
+
+//----- PageCopy
+// WidgetDisplayPrompt
+// WidgetCopyButton
+// PageCopy
+
+//----- PageSelect
+// SelectableControlButtons
+// SelectableFileButton
+// SelectableFileList
+// WidgetFolderTree
+// PageSelect
+
 }
