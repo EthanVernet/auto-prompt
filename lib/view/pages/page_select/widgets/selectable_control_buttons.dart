@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 
 class SelectableControlButtons extends StatelessWidget {
   final MainController controller;

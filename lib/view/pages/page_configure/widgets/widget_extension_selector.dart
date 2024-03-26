@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 
 class WidgetExtensionSelector extends StatefulWidget {
   final MainController controller;

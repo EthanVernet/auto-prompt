@@ -1,4 +1,4 @@
-import 'package:front/logic/model/file/file_content_model.dart';
+import 'package:front/logic/model/file/file_model.dart';
 import 'package:front/logic/model/section/section_model.dart';
 
 class CodeContentBuilder {

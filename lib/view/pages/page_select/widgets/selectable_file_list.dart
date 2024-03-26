@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front/controller/main_controller.dart';
-import 'package:front/logic/model/file/file_content_model.dart';
+import 'package:front/controller/controller_project.dart';
+import 'package:front/logic/model/file/file_model.dart';
 import 'package:front/logic/model/folder/folder_model.dart';
 import 'package:front/view/pages/page_select/widgets/selectable_file_button.dart';
 

@@ -1,4 +1,4 @@
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 
 class InputValidator {
   final MainController controller;

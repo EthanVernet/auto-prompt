@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 import 'package:front/logic/model/section/section_model.dart';
 import 'package:front/view/pages/page_configure/widgets/sections/widget_section_presentation.dart';
 

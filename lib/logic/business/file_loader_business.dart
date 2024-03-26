@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:front/logic/model/file/file_content_model.dart';
+import 'package:front/logic/model/file/file_model.dart';
 import 'package:front/logic/model/file/file_content_manager.dart';
 import 'package:front/logic/model/folder/folder_model.dart';
 

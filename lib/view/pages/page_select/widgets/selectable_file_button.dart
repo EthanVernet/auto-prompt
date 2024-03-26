@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/logic/model/file/file_content_model.dart';
-import 'package:front/controller/main_controller.dart';
+import 'package:front/logic/model/file/file_model.dart';
+import 'package:front/controller/controller_project.dart';
 
 class SelectableFileItem extends StatelessWidget {
   final FileContentModel fileContentModel;

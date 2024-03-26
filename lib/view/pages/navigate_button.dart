@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 import 'package:front/controller/navigation_controller.dart';
 import 'package:front/view/pages/type_page.dart';
 

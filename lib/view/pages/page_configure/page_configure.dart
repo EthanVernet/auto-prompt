@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:front/app/app_color.dart'; // Ensure this path is correct
-import 'package:front/controller/main_controller.dart';
+import 'package:front/controller/controller_project.dart';
 import 'package:front/view/layout/my_app_bar.dart';
 import 'package:front/view/pages/i_pages.dart';
 import 'package:front/view/pages/navigate_button.dart';
