@@ -11,7 +11,7 @@ import 'package:front/view/pages/page_select/widgets/widget_folder_tree.dart';
 import 'package:front/view/pages/type_page.dart';
 
 class PageSelect extends StatefulWidget implements IPages {
-  final MainController controller;
+  final ControllerProject controller;
 
   const PageSelect({Key? key, required this.controller}) : super(key: key);
 
@@ -62,7 +62,7 @@ class _PageSelectState extends State<PageSelect> {
                   ),
                 ),
                 ValueListenableBuilder<FolderModel?>(
-                  valueListenable: widget.controller.selectController.selectedFolderNotifier,
+                  valueListenable: widget.controller.selectedFolder(),
                   builder: (_, FolderModel? selectedFolder, __) {
                     String folderName = selectedFolder != null ? " in ${selectedFolder.fileName}" : "";
                     return Expanded(

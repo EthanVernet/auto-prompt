@@ -8,7 +8,7 @@ import 'type_page.dart';
 
 
 class PageFactory {
-  static IPages getPage(TypePage type, MainController? controller) {
+  static IPages getPage(TypePage type, ControllerProject? controller) {
     IPages tmp = PageConfigure(); // Assurez-vous que PageConfigure implémente IPages
     if (controller != null) {
       switch (type) {

@@ -13,10 +13,10 @@ import 'package:front/view/pages/type_page.dart'; // Ensure this path is correct
 // Ensure all your imports are correct and necessary packages are included in your pubspec.yaml file
 
 class PageConfigure extends StatelessWidget implements IPages {
-  final MainController controller;
+  final ControllerProject controller;
 
   PageConfigure({Key? key})
-      : controller = MainController(), // This will always create a new instance of MainController, ensure this is your intention
+      : controller = ControllerProject(), // This will always create a new instance of MainController, ensure this is your intention
         super(key: key);
 
   @override

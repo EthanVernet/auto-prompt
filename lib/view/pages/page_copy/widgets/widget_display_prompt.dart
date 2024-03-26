@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front/controller/controller_project.dart';
 
 class WidgetDisplayContent extends StatelessWidget {
-  final MainController controller;
+  final ControllerProject controller;
 
   const WidgetDisplayContent({Key? key, required this.controller}) : super(key: key);
 

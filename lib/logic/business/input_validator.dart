@@ -1,7 +1,7 @@
 import 'package:front/controller/controller_project.dart';
 
 class InputValidator {
-  final MainController controller;
+  final ControllerProject controller;
 
   InputValidator(this.controller);
 

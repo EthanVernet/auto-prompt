@@ -15,8 +15,7 @@ class DatabaseHelper {
     String path = join(await getDatabasesPath(), _databaseName);
     return await openDatabase(path,
         version: _databaseVersion,
-        onCreate: _onCreate,
-        onUpgrade: _onUpgrade);
+        onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {

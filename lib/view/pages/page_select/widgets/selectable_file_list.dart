@@ -5,7 +5,7 @@ import 'package:front/logic/model/folder/folder_model.dart';
 import 'package:front/view/pages/page_select/widgets/selectable_file_button.dart';
 
 class SelectableFileList extends StatefulWidget {
-  final MainController controller;
+  final ControllerProject controller;
 
   const SelectableFileList({Key? key, required this.controller}) : super(key: key);
 
@@ -18,30 +18,29 @@ class _SelectableFileListState extends State<SelectableFileList> {
   @override
   void initState() {
     super.initState();
-    widget.controller.selectController.selectedFolderNotifier.addListener(_updateFilesList);
+    widget.controller.addListener(_updateFilesList);
     _updateFilesList(widget.controller.getRootFolder());
   }
 
   void _updateFilesList([FolderModel? newFolder]) {
     setState(() {
-      var selectedFolder = newFolder ?? widget.controller.selectController.selectedFolderNotifier.value;
+      var selectedFolder = newFolder;
       if (selectedFolder != null) {
-        widget.controller.selectController.selectFolder(selectedFolder);
+        widget.controller.selectFolder(selectedFolder);
       }
     });
   }
 
   @override
   void dispose() {
-    widget.controller.selectController.selectedFolderNotifier.removeListener(_updateFilesList);
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    FolderModel? selectedFolder = widget.controller.selectController.selectedFolderNotifier.value;
-    List<FileContentModel> files = selectedFolder != null
-        ? widget.controller.selectController.getFilesForFolderAndSubfolders(selectedFolder)
+    FolderModel? selectedFolder = widget.controller.selectedFolder();
+    List<FileModel> files = selectedFolder
+        ? widget.controller.getFilesForFolderAndSubfolders(selectedFolder)
         : [];
 
     return Container(
@@ -49,7 +48,7 @@ class _SelectableFileListState extends State<SelectableFileList> {
           itemCount: files.length,
           itemBuilder: (context, index) {
             return SelectableFileItem(
-              fileContentModel: files[index],
+              file: files[index],
               controller: widget.controller,
               onSelected: () => setState(() {}),
             );

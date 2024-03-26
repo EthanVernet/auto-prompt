@@ -7,7 +7,7 @@ import 'package:front/view/pages/page_copy/widgets/widget_display_prompt.dart';
 import 'package:front/view/pages/page_copy/widgets/wisget_copy_button.dart';
 
 class PageCopy extends StatelessWidget implements IPages {
-  final MainController controller;
+  final ControllerProject controller;
 
   const PageCopy({Key? key, required this.controller}) : super(key: key);
 

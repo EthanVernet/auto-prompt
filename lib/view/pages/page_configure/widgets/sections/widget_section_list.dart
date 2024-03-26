@@ -6,7 +6,7 @@ import 'package:front/logic/model/section/section_model.dart';
 import 'package:front/view/pages/page_configure/widgets/sections/widget_section_presentation.dart';
 
 class WidgetSectionsList extends StatefulWidget {
-  final MainController controller;
+  final ControllerProject controller;
   WidgetSectionsList({Key? key, required this.controller}) : super(key: key);
 
   @override

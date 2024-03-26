@@ -6,7 +6,7 @@ import 'package:front/view/pages/type_page.dart';
 
 class NavigateButton extends StatefulWidget {
   final TypePage type;
-  final MainController? controller;
+  final ControllerProject? controller;
 
   const NavigateButton({super.key, required this.type, this.controller});
 

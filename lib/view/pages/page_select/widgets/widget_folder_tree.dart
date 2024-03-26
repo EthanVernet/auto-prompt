@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:front/app/app_color.dart';
 import 'package:front/controller/controller_project.dart';
+import 'package:front/logic/model/folder/folder_decorator.dart';
 import 'package:front/logic/model/folder/folder_model.dart';
 
 class WidgetFolderTree extends StatefulWidget {
-  final MainController controller;
+  final ControllerProject controller;
 
   const WidgetFolderTree({Key? key, required this.controller}) : super(key: key);
 
@@ -22,6 +23,8 @@ class _WidgetFolderTreeState extends State<WidgetFolderTree> {
   }
 
   Widget buildFolderTree(FolderModel folder, {double indent = 16.0}) {
+    FolderDecorator folderDecorator = FolderDecorator(rootFolder);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -34,11 +37,11 @@ class _WidgetFolderTreeState extends State<WidgetFolderTree> {
               contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
               leading: const Icon(Icons.folder, color: AppColors.actionColor),
               title: Text(
-                folder.fileName,
+                folderDecorator.fileName(),
                 style: const TextStyle(fontSize: 12),
               ),
               onTap: () {
-                widget.controller.selectController.selectFolder(folder);
+                widget.controller.selectFolder(folder);
               },
             ),
           ),

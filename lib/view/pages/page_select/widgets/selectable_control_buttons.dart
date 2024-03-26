@@ -3,7 +3,7 @@ import 'package:front/app/app_color.dart';
 import 'package:front/controller/controller_project.dart';
 
 class SelectableControlButtons extends StatelessWidget {
-  final MainController controller;
+  final ControllerProject controller;
 
   const SelectableControlButtons({Key? key, required this.controller}) : super(key: key);
 

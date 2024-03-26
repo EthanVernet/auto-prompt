@@ -12,7 +12,7 @@ class NavigationController {
 
   NavigationController._internal();
 
-  void navigateTo(BuildContext context, TypePage type, MainController? controller) {
+  void navigateTo(BuildContext context, TypePage type, ControllerProject? controller) {
     bool shouldNavigate = true;
     IPages page;
 
