@@ -1,14 +1,7 @@
-<<<<<<< Updated upstream
-import 'package:front/controller/controller_project.dart';
-
-class InputValidator {
-  final ControllerProject controller;
-=======
 import 'package:front/controller/controller_configure_project.dart';
 
 class InputValidator {
   final ControllerConfigureProject controller;
->>>>>>> Stashed changes
 
   InputValidator(this.controller);
 

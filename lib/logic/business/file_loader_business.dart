@@ -1,17 +1,12 @@
 import 'dart:io';
-<<<<<<< Updated upstream
-import 'package:front/logic/model/file/file_model.dart';
-=======
 import 'package:front/controller/controller_configure_project.dart';
->>>>>>> Stashed changes
-import 'package:front/logic/model/file/file_content_manager.dart';
 import 'package:front/logic/model/file/file_model.dart';
 import 'package:front/logic/model/folder/folder_model.dart';
 
 class FileLoaderBusiness {
   final String rootPath;
   final List<String> extensions;
-  final FileContentManager fileContentManager;
+  final List<FileModel> fileContentManager;
   final ControllerConfigureProject controller;
 
   FileLoaderBusiness({

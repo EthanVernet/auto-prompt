@@ -1,4 +1,6 @@
+import 'package:front/logic/model/file/file_decorator.dart';
 import 'package:front/logic/model/file/file_model.dart';
+import 'package:front/logic/model/section/section_decorator.dart';
 import 'package:front/logic/model/section/section_model.dart';
 
 class CodeContentBuilder {
@@ -6,14 +8,14 @@ class CodeContentBuilder {
     final StringBuffer contentBuilder = StringBuffer();
 
     contentBuilder.writeln('CODE : ');
-    for (final file in selectedFiles) {
-      contentBuilder.writeln('${file.fileName}');
-      contentBuilder.writeln('${file.fileContent}\n');
+    for (final FileModel file in selectedFiles) {
+      contentBuilder.writeln(FileDecorator(file).fileName);
+      contentBuilder.writeln(FileDecorator(file).fileContent);
     }
 
-    for (final section in sections) {
-      contentBuilder.writeln(section.title.toUpperCase());
-      contentBuilder.writeln('${section.content}\n');
+    for (final SectionModel section in sections) {
+      contentBuilder.writeln(SectionDecorator(section).title);
+      contentBuilder.writeln(SectionDecorator(section).content);
     }
 
     return contentBuilder.toString();

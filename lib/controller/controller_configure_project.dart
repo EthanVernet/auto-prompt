@@ -21,8 +21,12 @@ class ControllerConfigureProject extends ChangeNotifier {
     daoFolder = DaoFolder(db);
     daoSection = DaoSection(db);
   }
+  //----- Method for InputValidator
+  get selectedLanguageName => throw UnimplementedError();
+  get selectedFiles => throw UnimplementedError();
 
-  // Method for FileLoaderBusiness
+
+  //----- Method for FileLoaderBusiness
   void insertFile(String filepath, String content, FolderModel parentFolder) {
     var newFile = FileModel(
       id: null,

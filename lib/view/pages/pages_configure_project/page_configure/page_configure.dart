@@ -17,11 +17,9 @@ import 'widgets/sections/widget_section_list.dart';
 import 'widgets/widget_extension_picker.dart';
 
 class PageConfigure extends StatefulWidget implements IPages {
-  final Database db;
   final ControllerConfigureProject controller;
 
-  PageConfigure({super.key, required this.db})
-      : controller = ControllerConfigureProject(db);
+  const PageConfigure({super.key, required this.controller});
 
   @override
   _PageConfigureState createState() => _PageConfigureState();

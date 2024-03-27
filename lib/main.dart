@@ -16,7 +16,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme, // Correction : Utilisez `darkTheme` si vous souhaitez un thème sombre différent.
       home: const MainScreen(),
     );
   }
@@ -33,12 +33,14 @@ class MainScreenState extends State<MainScreen> {
   ValueNotifier<String> appBarTitleNotifier = ValueNotifier<String>('Configure');
   SettingController settingController = SettingController();
   late Database _database;
-  late ControllerConfigureProject _configureProject;
+  late ControllerConfigureProject configureProject;
 
   @override
   void initState() {
     super.initState();
-    _initializeDatabase();
+    _initializeDatabase().then((_) {
+      configureProject = ControllerConfigureProject(_database);
+    });
   }
 
   // Initialize database
@@ -49,20 +51,12 @@ class MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
-    return FutureBuilder(
-      future: _initializeDatabase(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return PageConfigure(db: _database);
-        } else {
-          return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
-        }
+    // Le FutureBuilder n'est pas nécessaire ici car vous initialisez déjà la base de données dans initState
+    // et mettez à jour l'état une fois terminé.
+    return ValueListenableBuilder(
+      valueListenable: appBarTitleNotifier, // Écoutez appBarTitleNotifier pour reconstruire l'interface utilisateur lorsque le titre change
+      builder: (context, value, child) {
+        return PageConfigure(controller: configureProject); // Assurez-vous que PageConfigure accepte un paramètre `controller`
       },
     );
   }

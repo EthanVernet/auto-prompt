@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
-import 'package:front/app/app_color.dart';
-import 'package:front/controller/controller_project.dart';
-=======
 import 'package:front/controller/controller_configure_project.dart';
->>>>>>> Stashed changes
+
 import 'package:front/controller/navigation_controller.dart';
 import 'package:front/view/pages/type_page.dart';
-import 'package:front/view/widgets/button.dart'; // Assurez-vous que le chemin d'importation est correct
+import 'package:front/view/widgets/button.dart';
 
 class NavigateButton extends StatefulWidget {
   final TypePage type;
-<<<<<<< Updated upstream
-  final ControllerProject? controller;
-=======
   final ControllerConfigureProject? controller;
->>>>>>> Stashed changes
 
   const NavigateButton({Key? key, required this.type, this.controller}) : super(key: key);
 

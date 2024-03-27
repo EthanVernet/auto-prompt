@@ -1,17 +1,9 @@
 class FolderModel {
-<<<<<<< Updated upstream
-=======
   late int id;
->>>>>>> Stashed changes
   late String selectedDirectoryPath;
   late List<FolderModel> subFolders;
 
   FolderModel({
-<<<<<<< Updated upstream
-    required this.selectedDirectoryPath,
-    required this.subFolders,
-  });
-=======
     required int id,
     required String selectedDirectoryPath,
     required List<FolderModel>? subFolders,
@@ -34,5 +26,4 @@ class FolderModel {
           : [],
     );
   }
->>>>>>> Stashed changes
 }

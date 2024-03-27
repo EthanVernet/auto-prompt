@@ -1,23 +1,13 @@
 import 'package:front/logic/model/folder/folder_model.dart';
 
 class FileModel {
-<<<<<<< Updated upstream
-=======
   int? id;
->>>>>>> Stashed changes
   String filePath;
   String fileContent;
   bool isSelected = false;
   FolderModel parentFolder;
 
   FileModel({
-<<<<<<< Updated upstream
-    required this.filePath,
-    required this.fileContent,
-    required this.parentFolder,
-  });
-}
-=======
     required this.id,
     required this.filePath,
     required this.fileContent,
@@ -45,4 +35,3 @@ class FileModel {
     );
   }
 }
->>>>>>> Stashed changes
