@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/app/app_color.dart';
+import 'package:front/core/app_color.dart';
 
 class ThreePointVue extends StatelessWidget {
   final int step;

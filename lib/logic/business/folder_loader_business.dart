@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:front/logic/model/folder/folder_model.dart';
 
 class FolderLoaderBusiness {
@@ -12,7 +13,11 @@ class FolderLoaderBusiness {
       throw Exception("Root directory does not exist.");
     }
 
-    FolderModel rootFolder = FolderModel(selectedDirectoryPath: rootPath);
+    var rootFolder = FolderModel(
+      id: 0, // ID placeholder
+      selectedDirectoryPath: rootPath,
+      subFolders: [],
+    );
     _processDirectory(rootDirectory, rootFolder);
     return rootFolder;
   }
@@ -21,7 +26,11 @@ class FolderLoaderBusiness {
     var entities = directory.listSync(recursive: false);
     for (var entity in entities) {
       if (entity is Directory) {
-        var newFolder = FolderModel(selectedDirectoryPath: entity.path);
+        var newFolder = FolderModel(
+          id: currentFolder.subFolders.length, // Simplified ID generation. Consider a more robust approach
+          selectedDirectoryPath: entity.path,
+          subFolders: [],
+        );
         currentFolder.subFolders.add(newFolder);
         _processDirectory(entity, newFolder);
       }

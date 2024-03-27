@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 import 'package:front/controller/controller_project.dart';
+=======
+import 'package:front/controller/controller_configure_project.dart';
+>>>>>>> Stashed changes
 import 'package:front/logic/business/input_validator.dart';
 import 'package:front/view/pages/i_pages.dart';
 import 'package:front/view/pages/page_factory.dart';
@@ -12,7 +16,11 @@ class NavigationController {
 
   NavigationController._internal();
 
+<<<<<<< Updated upstream
   void navigateTo(BuildContext context, TypePage type, ControllerProject? controller) {
+=======
+  void navigateTo(BuildContext context, TypePage type, ControllerConfigureProject? controller) {
+>>>>>>> Stashed changes
     bool shouldNavigate = true;
     IPages page;
 

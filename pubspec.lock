@@ -121,14 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.6"
   dart_style:
     dependency: transitive
     description:
@@ -189,6 +181,7 @@ packages:
       sha256: "9e8c3858111da373efc5aa341de011d9bd23e2c5c5e0c62bccf32438e192d7b1"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "3.0.2"
   flutter_localization:
     dependency: "direct main"
@@ -203,6 +196,9 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+=======
+    version: "3.0.1"
+>>>>>>> Stashed changes
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -253,14 +249,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.1"
   io:
     dependency: transitive
     description:
@@ -381,6 +369,33 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+<<<<<<< Updated upstream
+=======
+  path_provider:
+    dependency: "direct main"
+    description:
+      name: path_provider
+      sha256: b27217933eeeba8ff24845c34003b003b2b22151de3c908d0e679e8fe1aa078b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
+  path_provider_android:
+    dependency: transitive
+    description:
+      name: path_provider_android
+      sha256: "477184d672607c0a3bf68fbbf601805f92ef79c82b64b4d6eb318cbca4c48668"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
+  path_provider_foundation:
+    dependency: transitive
+    description:
+      name: path_provider_foundation
+      sha256: "5a7999be66e000916500be4f15a3633ebceb8302719b47b9cc49ce924125350f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
+>>>>>>> Stashed changes
   path_provider_linux:
     dependency: transitive
     description:
@@ -437,6 +452,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+<<<<<<< Updated upstream
   record:
     dependency: "direct main"
     description:
@@ -549,6 +565,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+=======
+>>>>>>> Stashed changes
   shelf:
     dependency: transitive
     description:
@@ -618,13 +636,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  sprintf:
-    dependency: transitive
+  sqflite:
+    dependency: "direct main"
     description:
-      name: sprintf
-      sha256: "1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23"
+      name: sqflite
+      sha256: a9016f495c927cb90557c909ff26a6d92d9bd54fc42ba92e19d4e79d61e798c6
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "7.0.0"
   sqflite:
     dependency: "direct main"
@@ -633,6 +652,8 @@ packages:
       sha256: a9016f495c927cb90557c909ff26a6d92d9bd54fc42ba92e19d4e79d61e798c6
       url: "https://pub.dev"
     source: hosted
+=======
+>>>>>>> Stashed changes
     version: "2.3.2"
   sqflite_common:
     dependency: transitive
@@ -714,6 +735,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+<<<<<<< Updated upstream
   uuid:
     dependency: transitive
     description:
@@ -722,6 +744,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.3.3"
+=======
+>>>>>>> Stashed changes
   vector_math:
     dependency: transitive
     description:
@@ -796,4 +820,8 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.3.0 <4.0.0"
+<<<<<<< Updated upstream
   flutter: ">=3.19.0"
+=======
+  flutter: ">=3.10.0"
+>>>>>>> Stashed changes

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/app/app_color.dart';
+import 'package:front/core/app_color.dart';
 import 'package:front/view/layout/three_point_vue.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -9,14 +9,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String titleStep;
   final int indexStep;
 
-  MyAppBar({
-    Key? key,
+  const MyAppBar({
+    super.key,
     this.isBack = false,
     required this.title,
     this.hasStep = false,
     this.titleStep = "",
     this.indexStep = 0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

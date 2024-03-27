@@ -1,4 +1,4 @@
-import 'package:front/logic/model/language/programming_language.dart';
+import 'package:front/logic/model/language/programming_language_model.dart';
 
 import 'programming_language_manager.dart';
 

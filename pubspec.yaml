@@ -11,12 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< Updated upstream
   flutter_localization: ^0.2.0
   cupertino_icons: ^1.0.2
   record: ^5.0.1
   file_picker: ^6.1.1
   sqflite: ^2.3.2
   path: ^1.9.0
+=======
+  path_provider: ^2.1.1
+  file_picker: ^6.1.1
+  sqflite: ^2.3.2
+>>>>>>> Stashed changes
 
 dev_dependencies:
   flutter_test:

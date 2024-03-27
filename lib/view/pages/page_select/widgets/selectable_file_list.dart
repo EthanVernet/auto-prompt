@@ -39,7 +39,7 @@ class _SelectableFileListState extends State<SelectableFileList> {
   @override
   Widget build(BuildContext context) {
     FolderModel? selectedFolder = widget.controller.selectedFolder();
-    List<FileModel> files = selectedFolder
+    List<FileModel> files = selectedFolder()
         ? widget.controller.getFilesForFolderAndSubfolders(selectedFolder)
         : [];
 

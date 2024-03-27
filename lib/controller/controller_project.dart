@@ -79,5 +79,7 @@ class ControllerProject extends ChangeNotifier {
   List<FileModel> getFilesForFolderAndSubfolders(FolderModel folder) {
     throw UnimplementedError();
   }
+
+  selectedFolder() {}
 }
 
