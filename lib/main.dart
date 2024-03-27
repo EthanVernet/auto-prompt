@@ -33,7 +33,7 @@ class MainScreenState extends State<MainScreen> {
   ValueNotifier<String> appBarTitleNotifier = ValueNotifier<String>('Configure');
   SettingController settingController = SettingController();
   late Database _database;
-  late ControllerConfigureProject _configureProject
+  late ControllerConfigureProject _configureProject;
 
   @override
   void initState() {
